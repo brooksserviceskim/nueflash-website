@@ -185,10 +185,19 @@ ul { list-style: none; }
 .nav__burger span { display: block; height: 2px; background: var(--c-black); }
 
 @media (max-width: 900px) {
-  .nav__menu, .nav__lang { display: none; }
+  .nav__menu { display: none; }
   .nav__burger { display: flex; }
-  .nav__menu.is-open,
-  .nav__lang.is-open {
+  /* Language switcher stays visible in the header on mobile */
+  .nav__lang {
+    display: flex;
+    gap: 2px;
+    margin-right: 12px;
+    font-size: 11px;
+  }
+  .nav__lang a {
+    padding: 4px 6px;
+  }
+  .nav__menu.is-open {
     display: flex;
     position: fixed;
     top: 68px; left: 0; right: 0;
@@ -198,7 +207,11 @@ ul { list-style: none; }
     gap: 20px;
     border-bottom: 1px solid var(--c-gray-light);
   }
-  .nav__lang.is-open { top: auto; bottom: 0; flex-direction: row; justify-content: center; }
+}
+@media (max-width: 480px) {
+  .nav { padding: 12px 18px; }
+  .nav__lang { margin-right: 6px; gap: 0; }
+  .nav__lang a { padding: 4px 5px; font-size: 10px; }
 }
 
 /* ============================================================
