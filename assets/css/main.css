@@ -788,6 +788,14 @@ ul { list-style: none; }
   font-size: 12px;
   color: var(--c-gray);
 }
+.footer__entities {
+  text-align: right;
+  line-height: 1.7;
+  max-width: 75ch;
+}
+@media (max-width: 700px) {
+  .footer__entities { text-align: left; }
+}
 @media (max-width: 600px) {
   .footer__top { grid-template-columns: 1fr; }
   .footer__tagline { text-align: left; }
